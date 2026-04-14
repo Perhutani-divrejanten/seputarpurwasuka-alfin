@@ -1,0 +1,22 @@
+﻿{
+  "name": "seputarpurwasuka-article-generator",
+  "version": "1.0.0",
+  "description": "Generator artikel otomatis dari Google Sheets untuk Seputar Purwasuka",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js",
+    "start": "node generate.js"
+  },
+  "keywords": [
+    "seputarpurwasuka",
+    "generator",
+    "google-sheets",
+    "html"
+  ],
+  "author": "Seputar Purwasuka Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "handlebars": "^4.7.7"
+  }
+}

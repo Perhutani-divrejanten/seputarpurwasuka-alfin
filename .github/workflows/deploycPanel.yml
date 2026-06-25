@@ -41,22 +41,9 @@ jobs:
             set ftp:passive-mode on
             set ftp:ssl-allow no
             open -u $FTP_USER,$FTP_PASS ftp://$FTP_HOST
-            mirror -R --parallel=3 --only-newer --verbose \
-              --exclude-glob .git* \
-              --exclude-glob .github \
-              --exclude-glob node_modules \
-              --exclude-glob '*.bak*' \
-              --exclude-glob articles_temp.json \
-              --exclude-glob .DS_Store \
-              --exclude-glob .env \
-              --exclude-glob .env.local \
-              --exclude-glob '*.log' \
-              --exclude-glob TROUBLESHOOTING.md \
-              --exclude-glob AUDIT_REPORT.md \
-              --exclude-glob PERBAIKAN_STATUS.md \
-              --exclude-glob final-verification.ps1 \
-              --exclude-glob fix-encoding.ps1 \
-              --exclude-glob rebrand-to-warta-janten.ps1 \
-              --exclude-glob replace-logo.ps1 \
-              ./ /seputarpurwasuka
+            mirror -R --parallel=3 --only-newer --verbose css /seputarpurwasuka/css
+            mirror -R --parallel=3 --only-newer --verbose js /seputarpurwasuka/js
+            mirror -R --parallel=3 --only-newer --verbose img /seputarpurwasuka/img
+            mirror -R --parallel=3 --only-newer --verbose article /seputarpurwasuka/article
+            put -O /seputarpurwasuka index.html news.html contact.html login.html register.html search.html clearstorage.html debug-images.html articles.json
           "
